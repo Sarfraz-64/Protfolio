@@ -1,4 +1,3 @@
-import * as React from 'react';
 import Grid from '@mui/material/Grid';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
@@ -44,18 +43,18 @@ function ActionAreaCard({ image, title, description }) {
 export default function ProjectGrid() {
   const projects = [
     {
-      image: 'paint-logo.png',
+      image: './assets/logos/paint-logo.png',
       title: 'Paint 3D',
       description:
         "In our OOP course, we designed a fully functional Paint 3D clone of Microsoft's Paint using C++ with several libraries.",
     },
     {
-        image: 'gomoku-logo.png',
+        image: './assets/logos/gomoku-logo.png',
         title: 'Gomoku',
         description: 'A two-player board game similar to tic-tac-toe, developed in C++.',
       },
     {
-      image: 'ludo-logo.jpg',
+      image: './assets/logos/ludo-logo.jpg',
       title: 'Ludo',
       description: 'In my DSA course, I developed complete Ludo game using the C++, and several built-in libraries for images and icons and it was an individual project.',
     },
