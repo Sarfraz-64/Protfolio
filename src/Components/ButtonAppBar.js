@@ -12,7 +12,8 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-const pages = ['Home','Education', 'Projects', 'Contacts'];
+// pages and settings
+const pages = ['Home', 'Education', 'Projects', 'Contacts'];
 const settings = ['Profile', 'Projects', 'Contact'];
 
 function ResponsiveAppBar() {
@@ -34,11 +35,22 @@ function ResponsiveAppBar() {
     setAnchorElUser(null);
   };
 
+  // Handle navigation or actions for each button
+  const handleNavigation = (page) => {
+    if (page === 'Education') {
+    document.getElementById('education').scrollIntoView({ behavior: 'smooth' });
+  } else if (page === 'Projects') {
+    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
+  } else if (page === 'Contacts') {
+    document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
+  }
+    // You can add similar conditions for other pages if needed.
+  };
+
   return (
     <AppBar position="static">
       <Container maxWidth="xl">
         <Toolbar disableGutters>
-          {/* <AdbIcon sx={{ display: { xs: 'none', md: 'flex' }, mr: 1 }} /> */}
           <Typography
             variant="h6"
             noWrap
@@ -85,13 +97,13 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={handleCloseNavMenu}>
+                <MenuItem key={page} onClick={() => handleNavigation(page)}>
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                 </MenuItem>
               ))}
             </Menu>
           </Box>
-          {/* <AdbIcon sx={{ display: { xs: 'flex', md: 'none' }, mr: 1 }} /> */}
+
           <Typography
             variant="h5"
             noWrap
@@ -106,21 +118,23 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-            }} 
+            }}
           >
             Sarfraz
           </Typography>
+
           <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={handleCloseNavMenu}
+                onClick={() => handleNavigation(page)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
               </Button>
             ))}
           </Box>
+
           <Box sx={{ flexGrow: 0 }}>
             <Tooltip title="Open settings">
               <IconButton onClick={handleOpenUserMenu} sx={{ p: 0 }}>
@@ -155,4 +169,5 @@ function ResponsiveAppBar() {
     </AppBar>
   );
 }
+
 export default ResponsiveAppBar;

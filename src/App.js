@@ -10,7 +10,7 @@ function App() {
     <>
       <ButtonAppBar />
        <div id="Summary">
-        <h2>Summary</h2>
+        <h2 >Summary</h2>
         <Summary/>
       </div>
       <div id="education">
@@ -21,7 +21,7 @@ function App() {
         <h2>Projects</h2>
         <Projects />
       </div>
-      <div id="contact">
+      <div id="contacts">
         <h2>Contact</h2>
         <Contact />
       </div>
