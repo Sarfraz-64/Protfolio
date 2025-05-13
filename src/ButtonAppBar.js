@@ -106,7 +106,7 @@ function ResponsiveAppBar() {
               letterSpacing: '.3rem',
               color: 'inherit',
               textDecoration: 'none',
-            }}
+            }} 
           >
             Sarfraz
           </Typography>
