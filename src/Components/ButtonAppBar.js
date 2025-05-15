@@ -13,8 +13,8 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
 // pages and settings
-const pages = ['Home', 'Education', 'Projects', 'Contacts'];
-const settings = ['Profile', 'Projects', 'Contact'];
+const pages = ['Home', 'Education', 'Projects'];
+const settings = ['Profile'];
 
 function ResponsiveAppBar() {
   const [anchorElNav, setAnchorElNav] = React.useState(null);
@@ -41,8 +41,6 @@ function ResponsiveAppBar() {
     document.getElementById('education').scrollIntoView({ behavior: 'smooth' });
   } else if (page === 'Projects') {
     document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-  } else if (page === 'Contacts') {
-    document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
   }
     
   };

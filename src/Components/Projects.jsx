@@ -48,6 +48,11 @@ export default function ProjectGrid() {
       description:
         "In our OOP course, we designed a fully functional Paint 3D clone of Microsoft's Paint using C++ with several libraries.",
     },
+     {
+      image: './assets/logos/Shogi-logo.jpg',
+      title: 'Shogi',
+      description: 'In my CFP course, I developed Shogi game similiar to Chess using the c++, and several built-in libraries for images and icons and it was an individual project.',
+    },
     {
         image: './assets/logos/gomoku-logo.png',
         title: 'Gomoku',
@@ -57,6 +62,11 @@ export default function ProjectGrid() {
       image: './assets/logos/ludo-logo.jpg',
       title: 'Ludo',
       description: 'In my DSA course, I developed complete Ludo game using the C++, and several built-in libraries for images and icons and it was an individual project.',
+    },
+    {
+      image: './assets/logos/chess-logo.jpg',
+      title: 'Chess',
+      description: 'In my Game-Dev course, I developed chess game using the Python, and several built-in libraries for images and icons and it was an individual project.',
     },
    
   ];
