@@ -44,7 +44,7 @@ function ResponsiveAppBar() {
   } else if (page === 'Contacts') {
     document.getElementById('contacts').scrollIntoView({ behavior: 'smooth' });
   }
-    // You can add similar conditions for other pages if needed.
+    
   };
 
   return (
