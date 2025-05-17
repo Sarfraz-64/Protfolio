@@ -7,11 +7,15 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        bgcolor: "#0f172a", // dark background
+        position: "fixed",
+        bottom: 0,
+        left: 0,
+        right: 0,
+        bgcolor: "#0f172a",
         color: "#ffffff",
         py: 4,
         px: { xs: 2, md: 10 },
-        mt: 8,
+        zIndex: 10,
       }}
     >
       <Stack
@@ -42,7 +46,7 @@ export default function Footer() {
           </Typography>
           <Stack direction="row" spacing={2}>
             <IconButton
-              href="https://www.linkedin.com/in/muhammad-sarfraz-051a5b299?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              href="https://www.linkedin.com/in/muhammad-sarfraz-051a5b299"
               target="_blank"
               sx={{ color: "white" }}
             >
@@ -56,7 +60,7 @@ export default function Footer() {
               <GitHub />
             </IconButton>
             <IconButton
-              href="https://www.instagram.com/sarfraz_280?igsh=aDRhOGJ2ODZoeGtj"
+              href="https://www.instagram.com/sarfraz_280"
               target="_blank"
               sx={{ color: "white" }}
             >
@@ -66,7 +70,6 @@ export default function Footer() {
         </Box>
       </Stack>
 
-      {/* Copyright */}
       <Typography variant="body2" align="center" sx={{ mt: 4 }}>
         © {new Date().getFullYear()} Muhammad Sarfraz All rights reserved.
       </Typography>
