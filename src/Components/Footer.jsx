@@ -7,15 +7,11 @@ export default function Footer() {
     <Box
       component="footer"
       sx={{
-        position: "fixed",
-        bottom: 0,
-        left: 0,
-        right: 0,
         bgcolor: "#0f172a",
         color: "#ffffff",
         py: 4,
         px: { xs: 2, md: 10 },
-        zIndex: 10,
+        mt: "auto", // Push footer to bottom if there's empty space
       }}
     >
       <Stack
@@ -71,7 +67,7 @@ export default function Footer() {
       </Stack>
 
       <Typography variant="body2" align="center" sx={{ mt: 4 }}>
-        © {new Date().getFullYear()} Muhammad Sarfraz All rights reserved.
+        © {new Date().getFullYear()} Muhammad Sarfraz. All rights reserved.
       </Typography>
     </Box>
   );

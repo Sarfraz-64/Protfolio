@@ -1,4 +1,5 @@
 import * as React from 'react';
+import { useNavigate } from 'react-router-dom';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -12,11 +13,11 @@ import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 
-// pages and settings
-const pages = ['Home', 'Education', 'Projects'];
-const settings = ['Profile'];
+const pages = ['Education', 'Projects'];
+const settings = ['Logout'];
 
 function ResponsiveAppBar() {
+  const navigate = useNavigate();
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -31,18 +32,14 @@ function ResponsiveAppBar() {
     setAnchorElNav(null);
   };
 
+const handleNavClick = (page) => {
+  navigate(`/${page.toLowerCase()}`);
+  handleCloseNavMenu();
+};
+
+
   const handleCloseUserMenu = () => {
     setAnchorElUser(null);
-  };
-
-  // Handle navigation or actions for each button
-  const handleNavigation = (page) => {
-    if (page === 'Education') {
-    document.getElementById('education').scrollIntoView({ behavior: 'smooth' });
-  } else if (page === 'Projects') {
-    document.getElementById('projects').scrollIntoView({ behavior: 'smooth' });
-  }
-    
   };
 
   return (
@@ -95,7 +92,7 @@ function ResponsiveAppBar() {
               sx={{ display: { xs: 'block', md: 'none' } }}
             >
               {pages.map((page) => (
-                <MenuItem key={page} onClick={() => handleNavigation(page)}>
+                <MenuItem key={page} onClick={() => handleNavClick(page)}>
                   <Typography sx={{ textAlign: 'center' }}>{page}</Typography>
                 </MenuItem>
               ))}
@@ -125,7 +122,7 @@ function ResponsiveAppBar() {
             {pages.map((page) => (
               <Button
                 key={page}
-                onClick={() => handleNavigation(page)}
+                onClick={() => handleNavClick(page)}
                 sx={{ my: 2, color: 'white', display: 'block' }}
               >
                 {page}
